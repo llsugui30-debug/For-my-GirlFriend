@@ -1,6 +1,4 @@
-/* ==========================================================================
-   TOKENS
-   ========================================================================== */
+
 :root {
   --baby-pink: #fbdfe6;
   --soft-pink: #f4b9c9;
@@ -38,10 +36,6 @@ button {
   background: none;
 }
 
-/* ==========================================================================
-   PAGE 1 — MAIL / COVER
-   ========================================================================== */
-/* shared cross-striped baby-pink background, used on both pages */
 .page1,
 .page2 {
   background-color: var(--baby-pink);
@@ -95,7 +89,6 @@ button {
   50%      { transform: scale(1.06); }
 }
 
-/* --- envelope: static image, no hover interaction, just a gentle idle float --- */
 .mail-scene {
   display: flex;
   justify-content: center;
@@ -117,14 +110,12 @@ button {
   50%      { transform: translateY(-8px); }
 }
 
-/* right before the page transition, a small lift + fade as it "opens" */
 .mail-wrap.is-opening .envelope-img {
   animation: none;
   transform: translateY(-14px) scale(1.04);
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* --- open button --- */
 .open-button {
   background: var(--soft-pink);
   color: #fff;
@@ -148,7 +139,6 @@ button {
   transform: translateY(-1px) scale(1.0);
 }
 
-/* --- burst layer for petals / hearts --- */
 .burst-layer {
   position: fixed;
   inset: 0;
@@ -180,9 +170,6 @@ button {
   width: 26px;
 }
 
-/* ==========================================================================
-   PAGE 2 — LOVE LETTER
-   ========================================================================== */
 .page2 {
   width: 100%;
   min-height: 100vh;
@@ -191,7 +178,6 @@ button {
   padding: clamp(60px, 10vw, 140px) 18px 140px;
 }
 
-/* the paper card itself + the space around it, where the decorations live */
 .paper-frame {
   position: relative;
   width: min(92vw, 760px);
@@ -273,13 +259,6 @@ button {
 .letter-body p:last-child {
   margin-bottom: 0;
 }
-
-/* ==========================================================================
-   PAGE 2 DECORATIONS
-   These live in the .paper-frame, which is wider than the .paper itself,
-   so every element sits OUTSIDE the paper's edge with clear breathing room.
-   Adjust width / top / bottom / left / right / rotation to fine-tune spacing.
-   ========================================================================== */
 .decor {
   position: absolute;
   z-index: 1;
@@ -296,7 +275,6 @@ button {
   animation: sway 7s ease-in-out infinite;
 }
 
-/* upper-right: bushy white flower cluster */
 .decor.white-flowers-a {
   width: 120px;
   top: 4%;
@@ -305,7 +283,6 @@ button {
   animation: float-slow 7.5s ease-in-out infinite;
 }
 
-/* lower-left: delicate white spray */
 .decor.white-flowers-b {
   width: 110px;
   bottom: 14%;
@@ -314,7 +291,6 @@ button {
   animation: sway 8s ease-in-out infinite;
 }
 
-/* mid-right: little line-art bunny face */
 .decor.bunny {
   width: 66px;
   top: 46%;
@@ -323,7 +299,6 @@ button {
   animation: bounce-slow 5s ease-in-out infinite;
 }
 
-/* lower-right: pink hand-drawn heart */
 .decor.pink-heart {
   width: 78px;
   bottom: -4%;
@@ -332,7 +307,6 @@ button {
   animation: pulse-slow 4.5s ease-in-out infinite;
 }
 
-/* bottom-center: floral divider, floating just under the paper */
 .decor.floral-divider {
   width: 56%;
   max-width: 230px;
@@ -362,9 +336,6 @@ button {
   50%      { transform: scale(1.08) rotate(6deg); }
 }
 
-/* ==========================================================================
-   RESPONSIVE
-   ========================================================================== */
 @media (max-width: 900px) {
   .paper-frame { width: 88vw; }
 
@@ -381,12 +352,10 @@ button {
   .paper-frame { width: 100%; }
   .paper { padding: 34px 18px 54px; }
 
-  /* on narrow phones the frame has no room either side of the paper,
-     so decorations move to float just above/below it instead of beside it */
   .decor.blue-flowers    { width: 78px; top: -9%; left: 4%; transform: rotate(-6deg); }
   .decor.white-flowers-a { width: 74px; top: -9%; right: 4%; transform: rotate(8deg); }
   .decor.white-flowers-b { width: 66px; bottom: -8%; left: 6%; transform: rotate(-10deg); }
-  .decor.bunny           { display: none; } /* avoid crowding very narrow screens */
+  .decor.bunny           { display: none; }
   .decor.pink-heart      { width: 58px; bottom: -8%; right: 6%; transform: rotate(6deg); }
   .decor.floral-divider  { width: 68%; bottom: -6%; }
 
