@@ -5,6 +5,7 @@ const page2        = document.getElementById('page2');
 const burstLayer   = document.getElementById('burstLayer');
 let hasOpened = false;
 
+
 openButton.addEventListener('click', () => {
   if (hasOpened) return;
   hasOpened = true;
